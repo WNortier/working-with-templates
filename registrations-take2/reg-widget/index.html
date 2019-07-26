@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./simple-grid.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <title>Document</title>
+    <script type="text/x-template" class="generateTemplate">
+        {{#each genRegistrations}}
+        <div class="filterDiv All" id="regPlate">{{this}}
+
+        </div>
+        {{/each}}
+
+    </script>
+
+    <script type="text/x-template" class="localStorageTemplate">
+        {{#each localStorageRegistrations}}
+        <div class="filterDiv All" id="regPlate">{{this}}
+
+        </div>
+        {{/each}}
+
+    </script>
+    <script type="text/x-template" class="filterTemplate">
+        
+        {{#if selectedFilterForTemplates}}
+        {{#each filterRegistrations}}
+        <div class="filterDiv All" id="regPlate">
+            {{this}}
+        </div>
+        {{/each}}
+        {{/if}}
+
+    </script>
+
+    <script>
+window.onload =  function(){
+    localStorageRegGenerator();
+    localStorageRegGeneratorForTemplates();
+};
+</script>
+</head>
+
+<body >
+    <!-- onload="localStorageRegGenerator()" -->
+
+
+
+    <div class="container">
+
+        <div class="row" style="margin-bottom: 10px">
+            <div class="col-12 left" id="empty_header">
+                <!-- <button style="float: left; position: absolute;margin-bottom: 10px;" id="vidButton" value="#">Try
+                    me</button> -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 center" id="header">Warwick's Registration Number Widget
+            </div>
+            <div class="col-6 center" id="header">Warwick's Registration Number Widget
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6 center" id="error_return">
+            </div>
+            <div class="col-6 center" id="error_returnForTemplates">
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6 center" id="settings"><i style="color: red;">Start here</i><br>Generator Settings
+
+                <button id="generate_button" autofocus="autofocus">Generate</button>
+                <input class="regInputField" type="text" id="registration_field" name="user_registration"
+                    placeholder="Enter reg here" maxlength="8" value="" autocomplete="off">
+                <button id="regCounter" value="cy">0</button>
+            </div>
+
+            <div class="col-6 center" id="settings"><i style="color: red;">Start here</i><br>Generator Settings
+                <button id="generate_buttonForTemplates" autofocus="autofocus">Generate</button>
+                <input class="regInputField" type="text" id="registration_fieldForTemplates" name="user_registration"
+                    placeholder="Enter reg here" maxlength="8" value="" autocomplete="off">
+                <button id="regCounterForTemplates" value="cy">0</button>
+            </div>
+        </div>
+
+
+        <div class="row ">
+            <div class="col-6 center" id="settings">Filter Settings
+
+                <button class="focus" id="allButton" value="all">Select<br>All</button>
+                <button class="focus" id="ctButton" value="cpt">Cape Town<br>CA</button>
+                <button class="focus" id="ckButton" value="ck">Malmesbury<br>CK</button>
+                <button class="focus" id="cyButton" value="cy">Bellville<br>CY</button>
+                <button id="resetButton">Reset</button>
+
+            </div>
+
+            <div class="col-6 center" id="settings">Filter Settings
+
+                <button class="focus" id="allButtonForTemplates" value="all">Select<br>All</button>
+                <button class="focus"id="ctButtonForTemplates" value="cpt">Cape Town<br>CA</button>
+                <button class="focus"id="ckButtonForTemplates" value="ck">Malmesbury<br>CK</button>
+                <button class="focus"id="cyButtonForTemplates" value="cy">Bellville<br>CY</button>
+                <button id="resetButtonForTemplates">Reset</button>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-6 center" id="reg_container"></div>
+            <div class="col-6 center generateTemplateInsertPoint" id="reg_containerForTemplates"></div>
+
+        </div>
+
+
+    </div>
+</body>
+<script src="./regScript.js" charset="utf-8"></script>
+<script src="./factory.js" charset="utf-8"></script>
+<script src="./domForTemplate.js" charset="utf-8"></script>
+
+<script src="./dom.js" charset="utf-8"></script>
+</html>

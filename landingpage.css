@@ -1,0 +1,68 @@
+body {
+    /*background-color: OliveDrab;*/
+    margin: 0;
+    font-family: monospace;
+    font-size: 17px;
+    color: AntiqueWhite;
+    line-height: 1.6;
+}
+
+#showcase {
+    background-image: url("./realspace.jpg");
+background-size: cover;
+background-position: center;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#showcase h1 {
+    font-size: 50px;
+    line-height: 1.2;
+    font-weight: bold;
+}
+
+#showcase p {
+    font-size: 20px;
+    line-height: 5;
+}
+
+#showcase .button-one {
+    font-size: 20px;
+    text-decoration: none;
+    color: AntiqueWhite;
+    border: AntiqueWhite 3px solid;
+    padding: 20px 30px;
+    border-radius: 10px;
+}
+
+#showcase .button-one:hover {
+    background: #926239;
+    color: AntiqueWhite;
+}
+
+#showcase .button-two {
+    font-size: 20px;
+    text-decoration: none;
+    color: AntiqueWhite;
+    border: AntiqueWhite 3px solid;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-top: 50px
+}
+
+#showcase .button-two:hover {
+    background: #926239;
+    color: AntiqueWhite;
+}
+
+.section-a {
+padding:20px;
+background-color:#926239;
+color:black;
+text-align:center;
+}
